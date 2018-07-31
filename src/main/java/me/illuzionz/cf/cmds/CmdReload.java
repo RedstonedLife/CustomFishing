@@ -14,6 +14,7 @@ public class CmdReload extends SubCommand {
     }
 
     public void onCommand(CommandSender player, String[] args) {
+        CustomFishing.cf.getManager().saveFiles();
         CustomFishing.cf.getManager().reloadFiles();
         MessageManager.getInstance().sendMsg(player, Msg.MSG_CMD_RELOAD);
     }
