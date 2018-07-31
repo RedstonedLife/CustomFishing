@@ -1,0 +1,12 @@
+name: CustomFishing
+version: 2.0
+author: IMinIILLuZionZ
+main: me.illuzionz.cf.CustomFishing
+
+commands:
+  cf:
+    description: The main command. Use /cf help
+
+permissions:
+  customfishing.default:
+    default: true

@@ -1,0 +1,74 @@
+Rewards:
+  Reward1: #The reward name
+      command: #A list of commmands to execute when a fish is caught
+      - "msg %player% sorry" #Leave as "None" if you want nothing to happen
+      message: #A list of messages to send to the player when a fish is caught
+      - "&c&l(!) &7You found &cDisappointment"
+      broadcastEnable: false #Do you want there to be a broadcast?
+      broadcast: #Message to broadcast on catch, use %player% for player name
+      - ""
+      titleEnabled: true # Do you wanna send a title when you catch a reward
+      Title: "&a&lYou found a Reward" # The title to send on catch
+      SubTitle: "&aFound: Disappointment" # The SubTitle to send on catch
+      chance: 1 #The chance of this getting picked
+      vanillaRewards: true #Do you still get vanilla rewards when you catch this?
+      expAmount: 6 #Set the amount of xp to get when you catch a fish
+      permission: "customfishing.default"
+      sound: ENTITY_EGG_THROW
+  Reward2:
+      command:
+      - "give %player% golden_apple 5"
+      message:
+      - "&c&l(!) &7You were lucky and found &c5 Golden Apples&7 while fishing"
+      broadcastEnable: false
+      broadcast:
+      - "None"
+      titleEnabled: true
+      Title: "&a&lYou found a Reward"
+      SubTitle: "&aFound: Golden Apples"
+      chance: 1
+      vanillaRewards: true
+      expAmount: 6
+      permission: "customfishing.default"
+      sound: ENTITY_EGG_THROW
+  Reward3:
+      command:
+      - "minecraft:give %player% cooked_beef 64"
+      message:
+      - "&c&l(!) &7You were lucky and found &c64 Steak&7 while fishing"
+      broadcastEnable: false
+      broadcast:
+      - "None"
+      titleEnabled: true
+      Title: "&a&lYou found a Reward"
+      SubTitle: "&aFound: Steak"
+      chance: 99
+      vanillaRewards: true
+      expAmount: 6
+      permission: "customfishing.default"
+      sound: ENTITY_EGG_THROW
+  Reward4:
+      command:
+      - "eco give %player% 200000"
+      - "give %player% cobblestone 64"
+      message:
+      - "&c&l(!) &7You were lucky and found &c$200,000 and 64 Cobblestone&7 while fishing"
+      broadcastEnable: false
+      broadcast:
+      - "None"
+      titleEnabled: true
+      Title: "&a&lYou found a Reward"
+      SubTitle: "&aFound: Money & Cobblestone"
+      chance: 1
+      vanillaRewards: true
+      expAmount: 6
+      permission: "customfishing.default"
+      sound: ENTITY_EGG_THROW
+
+NoRewardChance: 0 #Chance of no rewards out of 100
+expToDrop: 6 #The amount of exp to drop when you catch a fish if no custom reward
+
+Title:
+  fadeIn: 5
+  displayTime: 40
+  fadeOut: 5

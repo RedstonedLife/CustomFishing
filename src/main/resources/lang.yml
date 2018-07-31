@@ -1,0 +1,8 @@
+MSG:
+  PLAYER:
+    NOREWARDS: "&cYou do not have any permissions for any rewards"
+  CMD:
+    NOARGS: "&cPlease specify some arguments or use /cf help"
+    NOCMDFOUND: "&cThat is not a valid command. Use /cf help for a list of valid commands"
+    NOPERMS: "&cYou don't have permission for this command"
+    RELOAD: "&aSuccessfully reload Custom Fishing"
