@@ -2,7 +2,6 @@ package me.illuzionz.cf.cmds.managers;
 
 import me.illuzionz.cf.CustomFishing;
 import me.illuzionz.cf.cmds.CmdHelp;
-import me.illuzionz.cf.cmds.CmdReload;
 import me.illuzionz.cf.util.MessageManager;
 import me.illuzionz.cf.util.Msg;
 import org.bukkit.command.Command;
@@ -40,7 +39,6 @@ public class CommandManager implements CommandExecutor {
     public void setup() {
         plugin.getCommand(main).setExecutor(this);
         this.commands.add(new CmdHelp());
-        this.commands.add(new CmdReload());
     }
 
     /**

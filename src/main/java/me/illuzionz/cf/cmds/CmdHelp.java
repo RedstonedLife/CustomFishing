@@ -15,7 +15,6 @@ public class CmdHelp extends SubCommand {
         MessageManager msg = MessageManager.getInstance();
 
         msg.sendMsg(player, "&e/cf help : Display this page");
-        msg.sendMsg(player, "&e/cf reload : Reload the configs");
     }
 
 }

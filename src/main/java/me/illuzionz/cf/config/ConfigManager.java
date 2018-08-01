@@ -99,6 +99,10 @@ public class ConfigManager {
      * Save all of the files
      */
     public void saveFiles() {
+
+        langfile = new File(plugin.getDataFolder(), "lang.yml");
+        rewardsfile = new File(plugin.getDataFolder(), "rewards.yml");
+
         try {
             langcfg.save(langfile);
         } catch (IOException e) {
@@ -117,6 +121,9 @@ public class ConfigManager {
      * Reload all the files
      */
     public void reloadFiles() {
+        langfile = new File(plugin.getDataFolder(), "lang.yml");
+        rewardsfile = new File(plugin.getDataFolder(), "rewards.yml");
+
         langcfg = YamlConfiguration.loadConfiguration(langfile);
         rewardscfg = YamlConfiguration.loadConfiguration(rewardsfile);
     }
