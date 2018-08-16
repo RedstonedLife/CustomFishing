@@ -2,11 +2,9 @@ package me.illuzionz.cf.api;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
-import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FishRewardEvent extends PlayerEvent implements Cancellable {

@@ -10,10 +10,18 @@ public enum Msg {
      * Messages related with players
      */
     MSG_PLAYER_NOREWARDS("&cYou do not have any permissions for any rewards"),
+
+    /**
+     * Messages relates to commands
+     */
     MSG_CMD_NORARGS("&cPlease specify some arguments or use /cf help"),
     MSG_CMD_NOCMDFOUND("&cThat is not a valid command. Use /cf help for a list of valid commands"),
     MSG_CMD_NOPERMS("&cYou don't have permission for this command"),
-    MSG_CMD_RELOAD("&aSuccessfully reload Custom Fishing");
+
+    /**
+     * Messages used with the editor
+     */
+    MSG_EDITOR_LIST("&eList of current rewards:");
 
     public String path;
     public String def;
@@ -21,11 +29,10 @@ public enum Msg {
 
 
     /**
-     *
-     * @param path The path for the message in the lang file
+     * @param path  The path for the message in the lang file
      * @param start The default message if none are found
      */
-    Msg(String path, String start){
+    Msg(String path, String start) {
         this.path = path;
         this.def = start;
     }
@@ -35,7 +42,7 @@ public enum Msg {
      *
      * @param start The default message
      */
-    Msg(String start){
+    Msg(String start) {
         this.path = this.name().replace('_', '.');
         this.def = start;
     }
@@ -43,6 +50,7 @@ public enum Msg {
 
     /**
      * Converts the message to a coloured string
+     *
      * @return
      */
     @Override

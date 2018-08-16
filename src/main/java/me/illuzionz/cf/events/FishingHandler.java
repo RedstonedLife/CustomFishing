@@ -40,28 +40,31 @@ public class FishingHandler implements Listener {
         ch = 0;
 
         for (String key : config.getConfigurationSection("Rewards").getKeys(false)) {
-            if (player.hasPermission("Rewards." + key + ".permission")) {
-                for (int i = 0; i < config.getInt("Rewards." + key + ".chance"); i++) {
-                    ch++;
-                }
+            for (int i = 0; i < config.getInt("Rewards." + key + ".chance"); i++) {
+                ch++;
             }
+
+        }
+
+        if (ch <= 0) {
+            return;
         }
 
         items = new String[ch];
 
         for (String key : config.getConfigurationSection("Rewards").getKeys(false)) {
             // Set each item in the array
-            if (player.hasPermission("Rewards." + key + ".permission")) {
-                for (int i = 0; i < config.getInt("Rewards." + key + ".chance"); i++) {
-                    items[index++] = key;
-                }
+
+            for (int i = 0; i < config.getInt("Rewards." + key + ".chance"); i++) {
+                items[index++] = key;
             }
+
         }
 
     }
 
     @EventHandler
-    public void onFish(PlayerFishEvent e){
+    public void onFish(PlayerFishEvent e) {
 
         Player p = e.getPlayer();
         Random ran = new Random();
@@ -79,7 +82,7 @@ public class FishingHandler implements Listener {
                 return;
             }
 
-            if(items.length == 0){
+            if (items.length == 0) {
                 MessageManager.getInstance().sendMsg(p, Msg.MSG_PLAYER_NOREWARDS);
                 return;
             }
@@ -94,14 +97,15 @@ public class FishingHandler implements Listener {
             FishRewardEvent event = new FishRewardEvent(p, name, command, message, broadcast, config.getInt("expToDrop"));
             Bukkit.getServer().getPluginManager().callEvent(event);
 
-            if(config.getString("Rewards." + name + ".sound") != null){
+            if (config.getString("Rewards." + name + ".sound") != null) {
                 try {
                     sm.playSound(p, Sound.valueOf(config.getString("Rewards." + name + ".sound")));
 
                 } catch (Exception ex) {
                     Bukkit.getConsoleSender().sendMessage(MessageManager.getInstance().colorMsg("&cThat is not a valid sound name"));
                 }
-            };
+            }
+            ;
 
 
             e.setExpToDrop(config.getInt("Rewards." + name + ".expAmount"));

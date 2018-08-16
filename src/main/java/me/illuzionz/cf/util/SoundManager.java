@@ -13,7 +13,7 @@ public class SoundManager {
     private SoundManager() {
     }
 
-    public static void playSound(Player player, Sound sound){
+    public static void playSound(Player player, Sound sound) {
         player.playSound(player.getLocation(), sound, 10, 1);
     }
 

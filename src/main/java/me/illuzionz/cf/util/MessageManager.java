@@ -7,10 +7,10 @@ public class MessageManager {
 
     private static MessageManager msg = new MessageManager();
 
-    private MessageManager(){
+    private MessageManager() {
     }
 
-    public static MessageManager getInstance(){
+    public static MessageManager getInstance() {
         return msg;
     }
 
@@ -18,9 +18,9 @@ public class MessageManager {
      * Used to send a coloured message to a CommandSender
      *
      * @param sender Whoever is receiving the message
-     * @param msg The message being sent
+     * @param msg    The message being sent
      */
-    public void sendMsg(CommandSender sender, String msg){
+    public void sendMsg(CommandSender sender, String msg) {
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
     }
 
@@ -28,9 +28,9 @@ public class MessageManager {
      * Use for sending a message from Msg
      *
      * @param sender Whoever is receiving the message
-     * @param msg The enum to be used as the message
+     * @param msg    The enum to be used as the message
      */
-    public void sendMsg(CommandSender sender, Msg msg){
+    public void sendMsg(CommandSender sender, Msg msg) {
         String str = msg.toString();
         sender.sendMessage(str);
     }
@@ -41,7 +41,7 @@ public class MessageManager {
      * @param msg The string to be coloured
      * @return the coloured string
      */
-    public String colorMsg(String msg){
+    public String colorMsg(String msg) {
         return ChatColor.translateAlternateColorCodes('&', msg);
     }
 

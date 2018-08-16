@@ -6,3 +6,5 @@ MSG:
     NOCMDFOUND: "&cThat is not a valid command. Use /cf help for a list of valid commands"
     NOPERMS: "&cYou don't have permission for this command"
     RELOAD: "&aSuccessfully reload Custom Fishing"
+  EDITOR:
+    LIST: "&eList of current rewards:"

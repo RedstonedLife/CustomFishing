@@ -16,7 +16,7 @@ public class CTitle {
     int displayTime = config.getInt("Title.displayTime");
     int fadeOut = config.getInt("Title.fadeOut");
 
-    public void sendTitle(Player player, String titleText, String subtitleText){
+    public void sendTitle(Player player, String titleText, String subtitleText) {
         try {
 
             Object enumTitle = getNMSClass("PacketPlayOutTitle").getDeclaredClasses()[0].getField("TITLE").get(null);
@@ -32,16 +32,14 @@ public class CTitle {
             sendPacket(player, titlePacket);
             sendPacket(player, subtitlePacket);
 
-        }
-
-        catch (Exception e1) {
+        } catch (Exception e1) {
             e1.printStackTrace();
         }
     }
 
     public void sendPacket(Player player, Object packet) {
         try {
-            Object handle  = player.getClass().getMethod("getHandle").invoke(player);
+            Object handle = player.getClass().getMethod("getHandle").invoke(player);
             Object playerConnection = handle.getClass().getField("playerConnection").get(handle);
             playerConnection.getClass().getMethod("sendPacket", getNMSClass("Packet")).invoke(playerConnection, packet);
 
@@ -55,9 +53,7 @@ public class CTitle {
         String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         try {
             return Class.forName("net.minecraft.server." + version + "." + name);
-        }
-
-        catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
             return null;
         }

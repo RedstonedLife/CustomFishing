@@ -2,6 +2,7 @@ package me.illuzionz.cf.cmds.managers;
 
 import me.illuzionz.cf.CustomFishing;
 import me.illuzionz.cf.cmds.CmdHelp;
+import me.illuzionz.cf.cmds.editor.CmdRewards;
 import me.illuzionz.cf.util.MessageManager;
 import me.illuzionz.cf.util.Msg;
 import org.bukkit.command.Command;
@@ -29,7 +30,7 @@ public class CommandManager implements CommandExecutor {
      */
     private String main = "cf";
 
-    public CommandManager(){
+    public CommandManager() {
         setup();
     }
 
@@ -39,6 +40,7 @@ public class CommandManager implements CommandExecutor {
     public void setup() {
         plugin.getCommand(main).setExecutor(this);
         this.commands.add(new CmdHelp());
+        this.commands.add(new CmdRewards());
     }
 
     /**
@@ -61,7 +63,7 @@ public class CommandManager implements CommandExecutor {
                     return true;
                 }
 
-                if(!player.hasPermission(target.permission)){
+                if (!player.hasPermission(target.permission)) {
                     MessageManager.getInstance().sendMsg(player, Msg.MSG_CMD_NOPERMS);
                     return true;
                 }

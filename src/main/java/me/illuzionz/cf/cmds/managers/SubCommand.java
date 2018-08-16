@@ -1,7 +1,6 @@
 package me.illuzionz.cf.cmds.managers;
 
 import org.bukkit.command.CommandSender;
-import org.bukkit.permissions.Permission;
 
 public abstract class SubCommand {
 

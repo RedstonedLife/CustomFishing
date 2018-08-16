@@ -77,7 +77,9 @@ public class ConfigManager {
                 rewardscfg.options().copyDefaults(true);
                 saveFiles();
             }
-        } catch (UnsupportedEncodingException e) { e.printStackTrace(); }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
 
